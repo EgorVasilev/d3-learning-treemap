@@ -1,0 +1,70 @@
+body {
+  background: linear-gradient(to right, #fff, #ece9e6);
+  color: #2c2c2c;
+}
+
+.title {
+  text-align: center;
+}
+
+.plotWrap {
+  background-color: #fff;
+  box-shadow: #555 1px 2px 5px 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1600px;
+  padding: 6px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.tooltip-container {
+  /* used as a "railway" for tooltip inside the plot */
+  height: 100%;
+  pointer-events: none; /* make it transparent for hover/click events */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.tooltip {
+  background: #575757;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  box-shadow: #555 1px 2px 5px 0;
+  color: whitesmoke;
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 18px;
+  opacity: 1;
+  padding: 6px;
+  position: sticky;
+  text-align: start;
+  transition: opacity .4s, visibility .4s;
+  visibility: visible;
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.states {
+  fill: none;
+  stroke: #9c9c9c;
+  stroke-linejoin: round;
+}
+
+.legend {
+  transform: translate(25%, 0);
+}
+
+#plot {
+  aspect-ratio: 1600 / 1000; /* check #plot width/height setter in JS as well if you want to change it */
+
+  text {
+    cursor: default;
+  }
+}
